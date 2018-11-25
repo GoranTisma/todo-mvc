@@ -82,3 +82,36 @@ Cypress.Commands.add('createTodo', function (todo) {
     cmd.set({ $el: $li }).snapshot().end()
   })
 })
+
+Cypress.Commands.add('createItem', function (name) {
+  cy
+    .get('.new-todo').type(name).type('{enter}');
+})
+
+Cypress.Commands.add('createThreeItems', function (name1, name2, name3) {
+  cy
+    .createItem(name1)
+    .createItem(name2)
+    .createItem(name3);
+})
+
+Cypress.Commands.add('createThree', function () {
+  cy
+    .createItem('Goran')
+    .createItem('Pera')
+    .createItem('Zika');
+})
+
+Cypress.Commands.add('checkitems', function (name1, name2, name3) {
+  cy
+    .get('.todo-list').should('contain', name1)
+    .and('contain', name2)
+    .and('contain', name3);
+})
+
+Cypress.Commands.add('deleteAll', function () {
+  cy
+    .get('.destroy').eq(0).click({force: true})
+    .get('.destroy').eq(0).click({force: true})
+    .get('.destroy').eq(0).click({force: true})
+})

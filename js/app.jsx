@@ -8,7 +8,7 @@ var app = app || {};
 (function () {
 	'use strict';
 
-	app.ALL_TODOS = 'all';
+	app.ALL_TODOS = 'tisma';
 	app.ACTIVE_TODOS = 'active';
 	app.COMPLETED_TODOS = 'completed';
 	var TodoFooter = app.TodoFooter;
