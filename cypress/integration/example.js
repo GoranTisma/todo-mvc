@@ -39,10 +39,25 @@ describe('VEZBA', function () {
           .get('.new-todo').type('Tile').type('{enter}');
     });
 
-    it.only('check items', function () {
+    it('check items', function () {
         cy
           .createThreeItems('Goran','Tisma','Tile')
           .checkitems('Goran','Tisma','Tile')
           .deleteAll();
+    });
+
+    it('check', function () {
+        cy
+          .createThreeItems('Goran','Tisma','Tile')
+          .cekiranje()
+          .odcekiranje()
+          .promena();
+    });
+
+    it.only('kliktanje', function () {
+        cy
+          .createThreeItems('Goran','Tisma','Tile')
+          .cekiranje1()
+          .klik();
     });
     });

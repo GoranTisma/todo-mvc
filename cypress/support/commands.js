@@ -115,3 +115,31 @@ Cypress.Commands.add('deleteAll', function () {
     .get('.destroy').eq(0).click({force: true})
     .get('.destroy').eq(0).click({force: true})
 })
+
+Cypress.Commands.add('cekiranje1', function () {
+  cy
+    .get('.toggle').eq(0).check()
+})
+
+Cypress.Commands.add('cekiranje', function () {
+  cy
+    .get('.toggle-all').check()
+})
+
+Cypress.Commands.add('odcekiranje', function () {
+  cy
+    .get('.toggle-all').uncheck()
+})
+
+Cypress.Commands.add('promena', function () {
+  cy
+    .get('.todo-list li').eq(2).find('label').should('contain','Tile')
+    .get('.todo-list li').eq(2).find('label').dblclick()
+    .get('.todo-list li').eq(2).find('.edit').clear().type('majstor').type('{enter}')
+})
+
+Cypress.Commands.add('klik', function () {
+  cy.contains('Completed').click()
+  cy.contains('Active').click()
+  cy.contains('All').click()
+})
