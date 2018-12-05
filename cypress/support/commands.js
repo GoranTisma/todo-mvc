@@ -139,7 +139,8 @@ Cypress.Commands.add('promena', function () {
 })
 
 Cypress.Commands.add('klik', function () {
-  cy.contains('Completed').click()
-  cy.contains('Active').click()
-  cy.contains('All').click()
+  cy
+    .get('a').contains('Completed').click()
+    .get('a').contains('Active').click()
+    .get('a') .contains('All').click()
 })
