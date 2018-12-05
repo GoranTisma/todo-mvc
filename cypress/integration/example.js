@@ -54,7 +54,7 @@ describe('VEZBA', function () {
           .promena();
     });
 
-    it('kliktanje', function () {
+    it.only('kliktanje', function () {
         cy
           .createThreeItems('Goran','Tisma','Tile')
           .cekiranje1()
