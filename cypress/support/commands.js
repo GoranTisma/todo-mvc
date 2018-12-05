@@ -135,7 +135,7 @@ Cypress.Commands.add('promena', function () {
   cy
     .get('.todo-list li').eq(2).find('label').should('contain','Tile')
     .get('.todo-list li').eq(2).find('label').dblclick()
-    .get('.todo-list li').eq(2).find('.edit').clear().type('majstor').type('{enter}')
+    .get('.todo-list li').eq(2).find('.edit').clear().type('majstor').type('{enter}');
 })
 
 Cypress.Commands.add('klik', function () {
