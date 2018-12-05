@@ -142,5 +142,5 @@ Cypress.Commands.add('klik', function () {
   cy
     .get('a').contains('Completed').click()
     .get('a').contains('Active').click()
-    .get('a') .contains('All').click()
+    .get('a') .contains('All').click();
 })
